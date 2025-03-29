@@ -179,7 +179,7 @@
 
         function fetchWikiData(articleTitle) {
             const script = document.createElement("script");
-            script.src = `https://ru.wikipedia.org/w/api.php?action=parse&format=json&page=${articleTitle}&prop=text&callback=handleResponse`;
+            script.src = `https://ru.wikipedia.org/w/api.php?action=parse&format=json&page=${encodeURIComponent(articleTitle)}&prop=text&callback=handleResponse`;
             document.body.appendChild(script);
         }
 
